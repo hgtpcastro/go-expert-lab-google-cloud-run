@@ -1,0 +1,37 @@
+@hostname = localhost
+@port = 8080
+@host = {{hostname}}:{{port}}
+@version = v1
+
+#Três Pontas
+#http.StatusOK
+@zipCodeTP = 37191000
+
+#Cristais
+#http.StatusOK
+@zipCodeCT = 37275000
+
+#Rio de Janeiro
+#http.StatusOK
+@zipCodeRJ = 23548013
+
+#404 Not Found
+#http.StatusNotFound
+#can not find zipcod
+@zipCodeCNF = 00000000
+
+#422 Not Found
+#http.StatusUnprocessableEntity
+#invalid zipcode
+@zipCodeNVLD = 000000000x
+
+#Trocar o valor de zipCode, por uma das variáveis zip acima
+@zipCode = {{zipCodeRJ}}
+
+GET http://{{host}}/ HTTP/1.1
+Host: {{host}}
+
+###
+GET http://{{host}}/weather/{{zipCode}} HTTP/1.1
+Host: {{host}}
+version: {{version}}
