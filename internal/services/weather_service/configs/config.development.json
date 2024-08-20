@@ -1,9 +1,0 @@
-{
-  "appOptions": {
-    "serviceName": "zip_code_service"
-  },
-  "echoOptions": {
-    "port": ":8080",
-    "host": "http://localhost"
-  }
-}

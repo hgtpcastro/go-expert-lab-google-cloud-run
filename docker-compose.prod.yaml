@@ -1,0 +1,21 @@
+services:
+  weather_service:
+    build:
+      context: ./weather_service
+      dockerfile: ./Dockerfile.prod
+      args:
+        project: ./cmd/app
+        app_env: production
+    environment:
+      - APP_NAME=weather_service
+    ports:
+      - 8080:8080
+    restart: on-failure
+    # volumes:
+    #   - ./.docker/weather_service:/weather_service
+    networks:
+      - monorepo_net
+
+networks:
+  monorepo_net:
+    driver: bridge

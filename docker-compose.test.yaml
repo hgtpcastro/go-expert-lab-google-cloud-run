@@ -1,0 +1,24 @@
+services:
+  weather_service_test:
+    build:
+      context: ./weather_service
+      dockerfile: ./Dockerfile.test
+      args:
+        project: ./cmd/app
+        app_env: test
+        gin_port: 3000
+        service_port: 9080
+    environment:
+      - APP_NAME=weather_service
+    ports:
+      - 8080:3000
+    restart: on-failure
+    command: /bin/sh -c 'while true; do sleep 1; done'
+    # volumes:
+    #   - ./.docker/weather_service:/weather_service
+    networks:
+      - monorepo_net
+
+networks:
+  monorepo_net:
+    driver: bridge

@@ -1,6 +1,4 @@
-@hostname = localhost
-@port = 8080
-@host = {{hostname}}:{{port}}
+@host = Substituir pela Service URL da Cloud
 @version = v1
 
 #Três Pontas

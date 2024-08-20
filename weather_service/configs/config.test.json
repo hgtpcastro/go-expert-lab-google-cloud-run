@@ -1,0 +1,9 @@
+{
+  "appOptions": {
+    "serviceName": "weather_service_test"
+  },
+  "echoOptions": {
+    "port": ":3001",
+    "host": "http://localhost"
+  }
+}
